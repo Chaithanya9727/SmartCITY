@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traffic Management</title>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script> <!-- Replace with your API key -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    #map {
+        width: 100%;
+        height: 400px;
+    }
+    #chart {
+        width: 600px;
+        height: 300px;
+    }
+</style>
+</head>
+<body>
+<h2>Live Traffic Map</h2>
+<div id="map"></div>
+
+<h2>Traffic Trends</h2>
+<canvas id="chart"></canvas>
+
+<script>
+    function initMap() {
+        var center = { lat: 40.7128, lng: -74.006 };  // Example coordinates (New York City)
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: center
+        });
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+    }
+
+    window.onload = function() {
+        initMap();
+        fetchTrafficData();
+    };
+
+    function fetchTrafficData() {
+        fetch("http://localhost:5000/traffic-data")  // Ensure this is your correct API endpoint
+            .then(response => response.json())
+            .then(data => {
+                // Check if the data structure is correct
+                if (Array.isArray(data)) {
+                    var ctx = document.getElementById('chart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: data.map(entry => entry.time),  // X-axis values (time)
+                            datasets: [{
+                                label: 'Traffic Congestion',
+                                data: data.map(entry => entry.congestion),  // Y-axis values (congestion)
+                                borderColor: '#8884d8',
+                                fill: false
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                },
+                                tooltip: {
+                                    mode: 'index',
+                                    intersect: false,
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Time'
+                                    },
+                                    ticks: {
+                                        autoSkip: true,
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Congestion Level'
+                                    },
+                                    min: 0,
+                                    max: 100
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    console.error("Unexpected data structure:", data);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching traffic data:', error);
+            });
+    }
+</script>
+</body>
+</html>

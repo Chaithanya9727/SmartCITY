@@ -1,0 +1,130 @@
+/* Main City Problems Section */
+.city-problems {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Dark gradient for a sleek, urban look */
+    padding: 5rem 2rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+    margin: 4rem auto;
+    max-width: 1200px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  /* Title for City Problems */
+  .city-problems h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ecf0f1;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Subtitle/Description for the City Problems section */
+  .city-problems p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #bdc3c7;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+  }
+  
+  /* Problem Cards Grid Layout */
+  .city-problems .problem-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Responsive grid */
+    gap: 2.5rem;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+  
+  /* Each Problem Card */
+  .city-problems .problem-card {
+    background: #fff;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .city-problems .problem-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  }
+  
+  .city-problems .problem-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .city-problems .problem-card:hover img {
+    transform: scale(1.1); /* Icon zoom effect */
+  }
+  
+  /* Problem Card Title */
+  .city-problems .problem-card h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #333;
+  }
+  
+  /* Problem Card Description */
+  .city-problems .problem-card p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+  }
+  
+  /* Action Button on the Problem Card */
+  .city-problems .problem-card .btn {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .city-problems .problem-card .btn:hover {
+    background-color: #e67e22;
+    transform: translateY(-5px);
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .city-problems h2 {
+      font-size: 2.5rem;
+    }
+  
+    .city-problems .problem-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .city-problems .problem-card {
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .city-problems h2 {
+      font-size: 2rem;
+    }
+  
+    .city-problems .problem-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  

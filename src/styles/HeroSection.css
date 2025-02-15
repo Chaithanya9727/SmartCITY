@@ -1,0 +1,123 @@
+/* Hero Section Styling */
+.hero-section {
+  background-image: url('https://surl.li/ajtrco'); /* Replace with your preferred background image */
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 5px solid #00A8A8; /* Accent border */
+}
+
+/* Dark overlay to ensure text visibility */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Title Styling */
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Description Styling */
+.hero-description {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  opacity: 0.8;
+  animation: fadeIn 3s ease-out;
+}
+
+/* Button Styling */
+.cta-button {
+  background-color: #00A8A8;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  background-color: #008C8C;
+  transform: translateY(-5px);
+}
+
+.cta-button:focus {
+  outline: none;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}

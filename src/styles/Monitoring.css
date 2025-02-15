@@ -1,0 +1,117 @@
+/* Monitoring Component Styling */
+.monitoring-section {
+  background-color: #fafbfc;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.monitoring-header {
+  margin-bottom: 3rem;
+}
+
+.monitoring-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.monitoring-header p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #666;
+}
+
+.monitoring-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.monitoring-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monitoring-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.monitoring-card h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.monitoring-stat {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4e56d1;
+  margin-bottom: 1.5rem;
+}
+
+.monitoring-stat h4 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.monitoring-stat p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.monitoring-chart {
+  width: 100%;
+  height: 180px;
+  background-color: #e4e8f2;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #888;
+}
+
+.chart-placeholder {
+  color: #bbb;
+  font-size: 1.4rem;
+}
+
+.monitoring-cta {
+  margin-top: 3rem;
+}
+
+.cta-button {
+  background-color: #646cff;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #4e56d1;
+  transform: translateY(-3px);
+}
+
+.cta-button:focus {
+  outline: none;
+}
